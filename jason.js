@@ -10,14 +10,6 @@ const firstNameData = document.querySelector(`.firstNameData`);
 const lastNameData = document.querySelector(`.lastNamedata`);
 const salaryData = document.querySelector(`.salaryData`);
 
-// if (
-//   !lastNameInput.value === " " &&
-//   !firstNameInput === " " &&
-//   !salaryInput === " "
-// ) {
-
-// }
-
 addButton.addEventListener("click", () => {
   lists.innerHTML += ` </br> <label ><input type="checkbox" class="checkbox" />
 
@@ -32,16 +24,18 @@ addButton.addEventListener("click", () => {
 
 loadButton.addEventListener("click", () => {
   const checkboxes = document.querySelectorAll(".checkbox");
-  tbody.innerHTML = ""; // Cədvəli təmizləmək
+  tbody.innerHTML = "";
 
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      const firstName = checkbox.nextElementSibling.textContent; // İlk span
+      const firstName = checkbox.nextElementSibling.textContent;
+
       const lastName =
-        checkbox.nextElementSibling.nextElementSibling.textContent; // İkinci span
+        checkbox.nextElementSibling.nextElementSibling.textContent;
+
       const salary =
         checkbox.nextElementSibling.nextElementSibling.nextElementSibling
-          .textContent; // Üçüncü span
+          .textContent;
 
       tbody.innerHTML += `
                 <tr>
